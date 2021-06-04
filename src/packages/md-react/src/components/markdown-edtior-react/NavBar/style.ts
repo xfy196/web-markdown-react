@@ -7,6 +7,7 @@ export const NavBarContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 0 20px;
+    overflow-y: auto;
     .item {
         cursor: pointer;
         margin-right: 15px;

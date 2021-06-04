@@ -1,6 +1,6 @@
 {
   "name": "md-react-best",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "react版本的markdown-editor",
   "main": "index.ts",
   "author": "小小荧",
