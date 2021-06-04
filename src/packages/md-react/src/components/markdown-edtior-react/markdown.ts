@@ -1,3 +1,4 @@
+import emoji from "markdown-it-emoji"
 import MarkdownIt from "markdown-it"
 import hljs from "highlight.js"
 const md:any = new MarkdownIt({
@@ -25,6 +26,6 @@ const md:any = new MarkdownIt({
     idPrefix: "cbx_",
     ulClass: "task-list",
     liClass: "task=list-item"
-}) // 任务插件配置
+}).use(emoji, []) // 任务插件配置
 
 export default md

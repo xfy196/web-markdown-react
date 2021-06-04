@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { message, Menu, Tooltip, Dropdown, Spin } from 'antd';
 import { UploadOutlined, DownloadOutlined, BoldOutlined, ItalicOutlined, StrikethroughOutlined, OrderedListOutlined, UnorderedListOutlined, CarryOutOutlined, LeftOutlined, RightOutlined, LinkOutlined, TableOutlined, PictureOutlined, BulbOutlined, CodeOutlined, EllipsisOutlined, ClearOutlined, SaveOutlined, CompressOutlined, ExpandOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
+import emoji from 'markdown-it-emoji';
 import MarkdownIt from 'markdown-it';
 import hljs from 'highlight.js';
 
@@ -384,7 +385,7 @@ var md = new MarkdownIt({
     idPrefix: "cbx_",
     ulClass: "task-list",
     liClass: "task=list-item"
-}); // 任务插件配置
+}).use(emoji, []); // 任务插件配置
 
 var throttle = require("lodash.throttle");
 var scrolling = 0; // 当前滚动块的状态 0: both: none 1: edit 2: show

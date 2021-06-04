@@ -1037,7 +1037,14 @@
   "resolved" "https://registry.nlark.com/@types/linkify-it/download/@types/linkify-it-3.0.1.tgz?cache=0&sync_timestamp=1621241690450&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flinkify-it%2Fdownload%2F%40types%2Flinkify-it-3.0.1.tgz"
   "version" "3.0.1"
 
-"@types/markdown-it@^12.0.1":
+"@types/markdown-it-emoji@^2.0.1":
+  "integrity" "sha1-YHaavbvS4G2X77agKvgHjw4NwTU="
+  "resolved" "http://npm.zmops.cc/@types%2fmarkdown-it-emoji/-/markdown-it-emoji-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "@types/markdown-it" "*"
+
+"@types/markdown-it@*", "@types/markdown-it@^12.0.1":
   "integrity" "sha1-g5Hhn+pHlv+GPt2lWADH5mm+s1g="
   "resolved" "https://registry.nlark.com/@types/markdown-it/download/@types/markdown-it-12.0.1.tgz"
   "version" "12.0.1"
@@ -2159,6 +2166,11 @@
   "version" "3.1.0"
   dependencies:
     "semver" "^6.0.0"
+
+"markdown-it-emoji@^2.0.0":
+  "integrity" "sha1-MWStTACe/ZRumCdPdWKtYRCJojE="
+  "resolved" "http://npm.zmops.cc/markdown-it-emoji/-/markdown-it-emoji-2.0.0.tgz"
+  "version" "2.0.0"
 
 "markdown-it-task-checkbox@^1.0.6":
   "integrity" "sha1-nr17Y4LpkWImRgW8WA8qwRi+QkI="
