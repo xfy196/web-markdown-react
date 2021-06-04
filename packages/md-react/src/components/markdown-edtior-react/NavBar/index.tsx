@@ -131,7 +131,7 @@ export default function NavBar(props: PropsType) {
             reader.onload = () => {
                 props.setValue(reader.result as string)
                 message.success({
-                    content: "dao"
+                    content: "导入成功"
                 })
             }
         })

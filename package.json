@@ -60,5 +60,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {"url": "https://github.com/xfy196/web-markdown-react"},
+  "homepage": "https://web-markdown-react.vercel.app/"
 }
