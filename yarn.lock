@@ -7263,6 +7263,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "http://npm.zmops.cc/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.truncate@^4.4.2:
   version "4.4.2"
   resolved "https://registry.npm.taobao.org/lodash.truncate/download/lodash.truncate-4.4.2.tgz"
@@ -7378,10 +7383,12 @@ markdown-it@^12.0.6:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-md-react-best@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/md-react-best/-/md-react-best-1.1.3.tgz#b3ec7dc66ae7b39a9b0879f71050bdc213708d4a"
-  integrity sha512-BJAmBxHfcarM0dV9pd60PMUQBoFLWCF9Dl2Cro6qQpNPqKmJmR03HKfK1OFBltwzMbJQllJnI67XEXF2t0d+jA==
+md-react-best@^1.1.4:
+  version "1.1.4"
+  resolved "http://npm.zmops.cc/md-react-best/-/md-react-best-1.1.4.tgz#597cafc5b4e5fc7ea2a4edc4cb3b98881d166f72"
+  integrity sha1-WXyvxbTl/H6ipO3EyzuYiB0Wb3I=
+  dependencies:
+    lodash.throttle "^4.1.1"
 
 md5.js@^1.3.4:
   version "1.3.5"

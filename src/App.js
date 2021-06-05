@@ -1,5 +1,5 @@
-import MarkdownEditor from "./packages/md-react/index.js"
-// import MarkdownEditor from "md-react-best"
+// import MarkdownEditor from "./packages/md-react/index.js"
+import MarkdownEditor from "md-react-best"
 import "./App.css"
 function App() {
   return (
