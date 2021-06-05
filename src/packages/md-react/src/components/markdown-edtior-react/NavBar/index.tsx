@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons'
 import { NavBarContainer } from "./style"
 import { hash, getCursorPosition } from "../utils"
+import {mdConvert} from "md-converter"
 const { Item, ItemGroup } = Menu
 interface PropsType {
     value: string,
@@ -16,7 +17,9 @@ interface PropsType {
     fullScreen: boolean,
     setFullScreen: (fullScreen: boolean) => void,
     setLoading: (loading: boolean) => void,
-    setValue: (value: string) => void
+    setValue: (value: string) => void,
+    setVisible: (value: boolean) => void,
+    setTransformTitle: (value: string) => void
 
 }
 export default function NavBar(props: PropsType) {
@@ -230,6 +233,54 @@ export default function NavBar(props: PropsType) {
             })
         }
     }
+
+    /**
+     * HTML转换markdown文档
+     */
+    const handleHtmlToMd = () => {
+        props.setTransformTitle("html-to-md")
+        props.setVisible(true)
+    }
+
+    /**
+     * md转换为html
+     */
+    const handleMdToHtml = () => {
+        try {
+            
+            let html = mdConvert(props.value)
+            // 首先判断是否支持流对象
+            if (!Blob || !URL) {
+                return message.error({
+                    content: "浏览器不支持导出html文件，请更换浏览器再试"
+                })
+            }
+            // 是否存在转换只会走的value值
+            if (!html) {
+                // 不存在
+                return message.warn({
+                    content: "当前内容为空，无需导出"
+                })
+            }
+            let blob = new Blob([html])
+            // 创建a标签
+            let aEl = document.createElement("a")
+            let downloadUrl = URL.createObjectURL(blob)
+            aEl.href = downloadUrl
+            aEl.download = `${hash()}.html`
+            aEl.click()
+            // 移除创建的流对象
+            URL.revokeObjectURL(downloadUrl)
+            message.success({
+                content: "导出html成功"
+            })
+        } catch (error) {
+            message.error({
+                content: "该功能暂时不稳定，正在紧急修复"
+            })
+        }
+
+    }
     // 代码块菜单
     const codeBlockMenu = (
         <Menu onClick={addCodeBlock}>
@@ -292,6 +343,12 @@ export default function NavBar(props: PropsType) {
             <Item key="exportMd">
                 <DownloadOutlined />
                 导出md
+            </Item>
+            <Item key="html-to-md" onClick={handleHtmlToMd}>
+                html-to-md               
+            </Item>
+            <Item key="md-to-html" onClick={handleMdToHtml}>
+                md-to-html             
             </Item>
         </Menu>
     )
@@ -371,7 +428,7 @@ export default function NavBar(props: PropsType) {
                             <ExpandOutlined className="item" onClick={() => { props.setFullScreen(true); message.info('进入全屏模式') }} />
                         </Tooltip>
                 }
-            
+
         </NavBarContainer>
     )
 }

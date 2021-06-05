@@ -22,3 +22,8 @@ li.task-list-item {
     background-color: rgb(225, 248, 222);
     border-radius: 3px;
 }
+pre {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}

@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { PropsType } from './types'
 import { MarkdownEditorContainer } from "./style/style"
-import { Spin } from "antd"
+import { Spin, Modal, Input, message } from "antd"
 import NavBar from "./NavBar"
 import "antd/dist/antd.css"
 import "./style/global.css"
 import md from "./markdown"
 const throttle = require("lodash.throttle")
+const HtmlToMd = require("html-to-md")
 let scrolling: 0 | 1 | 2 = 0 // 当前滚动块的状态 0: both: none 1: edit 2: show
 let scrollTimer: any // 改变scroll值的定时器
 let initValue: string = localStorage.getItem("md-react-value") as string ? localStorage.getItem("md-react-value") as string: ""
@@ -17,6 +18,10 @@ export default function MarkDownEditor(props: PropsType) {
     const editRef = useRef<any>(null)
     const showRef = useRef<any>(null)
     const [value, setValue] = useState(initValue)
+    const [transformTitle, setTransformTitle] = useState("")
+    const [visible, setVisible] = useState(false)
+    const [transformValue, setTransformValue] = useState("")
+    const [transformLoading, setTransformLoading] = useState(false)
     // 监听value的改变, 每一次的改变都会触发
     useEffect(() => {
         setHtmlString(md.render(value))
@@ -65,6 +70,27 @@ export default function MarkDownEditor(props: PropsType) {
             setValue(e.target.value)
         }, 100)()
     }, [])
+
+    /**
+     * 将html转换为md
+     * @param value 
+     */
+    const handleTransformHtmlToMd = () => {
+        if(!transformValue.trim()){
+            message.warning({
+                content: "没有内容，不需要转换"
+            })
+            return
+        }
+        setTransformLoading(true)
+        let newValue = HtmlToMd(transformValue)
+        setValue(newValue)
+        setTransformLoading(false)
+        message.success({
+            content: "转换成功"
+        })
+        setVisible(false)
+    }
     /**
      * 需求
      * 左侧面板输入markdown格式的文本，然后右侧进行转换为markdown的风格的文档
@@ -78,6 +104,8 @@ export default function MarkDownEditor(props: PropsType) {
             fullScreen={fullScreen}
             setFullScreen={setFullScreen}
             setLoading={setLoading}
+            setTransformTitle={setTransformTitle}
+            setVisible={setVisible}
             ></NavBar>
             {/* 加载组件 */}
             <Spin tip="更新主题中..." wrapperClassName="write-spin" spinning={loading}>
@@ -87,6 +115,17 @@ export default function MarkDownEditor(props: PropsType) {
                     <div onScroll={handleScroll} ref={showRef} className={`${fullScreen ? 'fullScreen' : ''}`} id="write" dangerouslySetInnerHTML={{ __html: htmlString }}></div>
                 </main>
             </Spin>
+            <Modal width={"50%"} onCancel={() => {
+                setTransformValue("")
+                setVisible(false)
+            }} onOk={() => {
+                // 转换过程
+                handleTransformHtmlToMd()
+            }} cancelText="返回" okText="确定" title={transformTitle} visible={visible}>
+                <Spin tip="转换中..." spinning={transformLoading}>  
+                <Input.TextArea autoSize={{minRows: 6, maxRows: 18}} value={transformValue} onChange={({target: {value}}) => setTransformValue(value)}></Input.TextArea>
+            </Spin>
+            </Modal>
         </MarkdownEditorContainer>
     )
 }
