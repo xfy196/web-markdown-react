@@ -20,8 +20,4 @@ export const NavBarContainer = styled.div`
             padding: 5px 0;
         }
     }
-    .right {
-        flex: 1;
-        text-align: right;
-    }
 `

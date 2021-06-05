@@ -362,7 +362,6 @@ export default function NavBar(props: PropsType) {
             <Tooltip title='暂存' arrowPointAtCenter>
                 <SaveOutlined className="item" onClick={handleTemporaryStorage} />
             </Tooltip>
-            <section className="right">
                 {
                     props.fullScreen
                         ? <Tooltip title='退出全屏' arrowPointAtCenter>
@@ -372,7 +371,6 @@ export default function NavBar(props: PropsType) {
                             <ExpandOutlined className="item" onClick={() => { props.setFullScreen(true); message.info('进入全屏模式') }} />
                         </Tooltip>
                 }
-            </section>
             
         </NavBarContainer>
     )
