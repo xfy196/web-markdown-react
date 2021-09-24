@@ -3816,6 +3816,11 @@ core-js-pure@^3.0.0:
   resolved "https://registry.nlark.com/core-js-pure/download/core-js-pure-3.13.1.tgz?cache=0&sync_timestamp=1622278959339&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-js-pure%2Fdownload%2Fcore-js-pure-3.13.1.tgz"
   integrity sha1-XROdNGeA8BX2ciX0XuI2Kmvta6E=
 
+core-js@3:
+  version "3.18.0"
+  resolved "https://registry.nlark.com/core-js/download/core-js-3.18.0.tgz?cache=0&sync_timestamp=1632078308388&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-js%2Fdownload%2Fcore-js-3.18.0.tgz#9af3f4a6df9ba3428a3fb1b171f1503b3f40cc49"
+  integrity sha1-mvP0pt+bo0KKP7GxcfFQOz9AzEk=
+
 core-js@^2.4.0:
   version "2.6.12"
   resolved "https://registry.nlark.com/core-js/download/core-js-2.6.12.tgz?cache=0&sync_timestamp=1622278867523&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-js%2Fdownload%2Fcore-js-2.6.12.tgz"
@@ -7443,6 +7448,13 @@ markdown-it@^12.0.6:
     linkify-it "^3.0.1"
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
+
+md-converter@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmmirror.com/md-converter/download/md-converter-1.0.2.tgz#df98e8a7c133c57be8ccfb9b7f31b9d18c6b8cec"
+  integrity sha1-35jop8EzxXvozPubfzG50YxrjOw=
+  dependencies:
+    core-js "3"
 
 md-react-best@^1.1.4:
   version "1.1.4"
