@@ -1,6 +1,6 @@
 // import MarkdownEditor from "./packages/md-react/index.js"
 import MarkdownEditor from "./packages/md-react/src/index.ts";
-import RichTextEditor from "./packages/rich-text-editor/src/index"
+import RichTextEditor from "./packages/rich-text-editor/src/index.ts"
 import { Tabs } from "antd";
 import "./App.css";
 import { useCallback, useState } from "react";
