@@ -1,2 +1,2 @@
-import RichTextEditor from "./components/rich-text-editor"
+import RichTextEditor from "../lib/bundle"
 export default RichTextEditor

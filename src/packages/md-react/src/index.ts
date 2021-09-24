@@ -1,2 +1,2 @@
-import MarkdownEditor from "./components/markdown-edtior-react"
+import MarkdownEditor from "../lib/bundle"
 export default MarkdownEditor
