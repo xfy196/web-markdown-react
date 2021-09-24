@@ -7331,7 +7331,7 @@ lodash.templatesettings@^4.0.0:
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
-  resolved "https://registry.npm.taobao.org/lodash.throttle/download/lodash.throttle-4.1.1.tgz"
+  resolved "https://registry.npm.taobao.org/lodash.throttle/download/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
   integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash.truncate@^4.4.2:
@@ -7456,10 +7456,10 @@ md-converter@^1.0.2:
   dependencies:
     core-js "3"
 
-md-react-best@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.npmmirror.com/md-react-best/download/md-react-best-1.1.4.tgz"
-  integrity sha1-WXyvxbTl/H6ipO3EyzuYiB0Wb3I=
+md-react-best@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.npmmirror.com/md-react-best/download/md-react-best-1.1.5.tgz?cache=0&sync_timestamp=1632495457611&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fmd-react-best%2Fdownload%2Fmd-react-best-1.1.5.tgz#ad6d71b6b862d9f481effd80c7c67206a4fb8b56"
+  integrity sha1-rW1xtrhi2fSB7/2Ax8ZyBqT7i1Y=
   dependencies:
     lodash.throttle "^4.1.1"
 
